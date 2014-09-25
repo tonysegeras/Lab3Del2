@@ -1,13 +1,8 @@
 package TonyJocke_Lab3Del2;
 
 public class LibraryMain {
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Book myNewBook = new Book("1234", "Lord of the flies", 1, 14.99);
+		System.out.println(myNewBook.toString());
 	}
-
 }
