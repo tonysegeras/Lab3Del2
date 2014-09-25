@@ -59,6 +59,7 @@ public class Book implements Comparable<Book> {
 		for(int i = 0; i< authors.size();i++) {
 			info += authors.get(i).returnAuthor() + ", ";
 		}
+		info += "Edition: " + this.edition + ", ISBN: " + this.isbn + ", Price: " + this.price + ":-";
 		return info;
 	}
 
