@@ -13,6 +13,11 @@ public class CollectionOfBooks {
 		theBooks.add(book);
 	}
 	
+	public ArrayList<Book> getBooksByTitle(String title) {
+		
+		return ;
+	}
+	
 	public void removeBook() {
 		
 	}

@@ -9,12 +9,13 @@ public class Book implements Comparable<Book> {
 	private double price;
 	private ArrayList<Author> authors;
 	
-	public Book(String isbn, String title, int edition, double price) {
+	public Book(String isbn, String title, int edition, double price, String author) {
 		this.isbn = new String(isbn);
 		this.title = new String(title);
 		this.edition = edition;
 		this.price = price;
 		authors = new ArrayList<Author>();
+		authors.add(new Author(author));
 	}
 	
 	public void addAuthor(String author) {
@@ -50,6 +51,15 @@ public class Book implements Comparable<Book> {
 		
 		
 		return 0;
+	}
+	
+	public String toString() {
+		
+		String info = "Title: " + this.returnTitle() + ", Author(s) :" ;
+		for(int i = 0; i< authors.size();i++) {
+			info += authors.get(i).returnAuthor() + ", ";
+		}
+		return info;
 	}
 
 
