@@ -19,5 +19,16 @@ public class UserInterface {
 	
 	public void printMenu(){
 		System.out.println(printedMenu);
-	}	
+	}
+	
+	public void menuChoice(){
+		int choice = scan.nextInt();
+		if(choice > 6 || choice < 1)
+			throw new IllegalArgumentException();
+		
+		switch(choice){
+			case 1:
+				
+		}
+	}
 }
