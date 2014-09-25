@@ -26,6 +26,7 @@ public class Book implements Comparable<Book> {
 		return copy;
 	}
 	
+	// Haha, ISBN!!
 	public String returnIsbn() {
 		String info = this.isbn;
 		return info;
