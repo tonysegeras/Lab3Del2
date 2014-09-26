@@ -79,10 +79,25 @@ public class UserInterface {
 		System.out.print("Enter the price: ");
 		double price = scan.nextDouble();
 		System.out.print("Enter the authors(s) (separated by ,): ");
-		String author = scan.next();
 		
-		Book temp = new Book(isbn, title, edition, price, author);
+		String author = "";
+		while(author.length() == 0)
+			author = scan.nextLine();
+		
+		Book temp = new Book(isbn, title, edition, price, authorsInAList(author));
 		library.addBook(temp);
+	}
+	
+	private ArrayList<Author> authorsInAList(String author) {
+		ArrayList<Author> authorToTemp = new ArrayList<Author>();
+		
+	
+		String[] parts = author.split(", ");
+		for (String part : parts) {
+			authorToTemp.add(new Author(part));
+		}
+		
+		return authorToTemp;
 	}
 	
 	public void removeBook(CollectionOfBooks library){

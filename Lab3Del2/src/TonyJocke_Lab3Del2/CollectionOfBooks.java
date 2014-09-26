@@ -34,7 +34,7 @@ public class CollectionOfBooks {
 	}
 
 	public ArrayList<Book> searchBookByTitle(String searchedTitle) {
-
+		
 		return;
 	}
 
