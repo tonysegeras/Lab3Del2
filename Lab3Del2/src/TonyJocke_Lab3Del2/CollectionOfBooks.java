@@ -19,15 +19,10 @@ public class CollectionOfBooks {
 		
 
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
-		for(int i=0; i<theBooks.size();i++) {
-			if(theBooks.get(i).returnTitle().contains(title)) {
-				listToReturn.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
-							.returnTitle(), theBooks.get(i).returnEdition(),
-							theBooks.get(i).returnPrice(), theBooks.get(i)
-									.getAuthors()));
-
-			}
-		}
+		for(int i=0; i<theBooks.size();i++) 
+			if(theBooks.get(i).returnTitle().contains(title)) 
+				listToReturn.add(theBooks.get(i));
+		
 		Collections.sort(listToReturn);
 //		for (int i = 0; i < theBooks.size(); i++) {
 //			listToReturn
@@ -48,10 +43,7 @@ public class CollectionOfBooks {
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
 		for(int i=0; i<theBooks.size();i++) {
 			if(theBooks.get(i).returnIsbn().contains(searchedISBN)) {
-				listToReturn.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
-							.returnTitle(), theBooks.get(i).returnEdition(),
-							theBooks.get(i).returnPrice(), theBooks.get(i)
-									.getAuthors()));
+				listToReturn.add(theBooks.get(i));
 
 			}
 		}
