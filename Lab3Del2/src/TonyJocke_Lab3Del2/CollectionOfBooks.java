@@ -3,7 +3,7 @@ package TonyJocke_Lab3Del2;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CollectionOfBooks {
+public class CollectionOfBooks implements Comparable<Book> {
 	private ArrayList<Book> theBooks;
 
 	public CollectionOfBooks() {
@@ -24,19 +24,12 @@ public class CollectionOfBooks {
 				listToReturn.add(theBooks.get(i));
 		
 		Collections.sort(listToReturn);
-//		for (int i = 0; i < theBooks.size(); i++) {
-//			listToReturn
-//					.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
-//							.returnTitle(), theBooks.get(i).returnEdition(),
-//							theBooks.get(i).returnPrice(), theBooks.get(i)
-//									.getAuthors()));
-//		}
 
 		return listToReturn;
 	}
 
-	public void removeBook() {
-
+	public void removeBook(Book book) {
+		theBooks.remove(book);
 	}
 
 	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {
@@ -67,6 +60,11 @@ public class CollectionOfBooks {
 		for(Book b : theBooks)
 			info += b.toString() + "\n";
 		return info;
+	}
+
+	public int compareTo(Book other) {
+		
+		return this.compareTo(other);
 	}
 	
 }
