@@ -15,16 +15,27 @@ public class CollectionOfBooks {
 	}
 
 	public ArrayList<Book> getBooksByTitle(String title) {
-		Collections.sort(theBooks);
-		ArrayList<Book> listToReturn = new ArrayList<Book>();
+		
+		
 
-		for (int i = 0; i < theBooks.size(); i++) {
-			listToReturn
-					.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
+		ArrayList<Book> listToReturn = new ArrayList<Book>();
+		for(int i=0; i<theBooks.size();i++) {
+			if(theBooks.get(i).returnTitle().contains(title)) {
+				listToReturn.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
 							.returnTitle(), theBooks.get(i).returnEdition(),
 							theBooks.get(i).returnPrice(), theBooks.get(i)
 									.getAuthors()));
+
+			}
 		}
+		Collections.sort(listToReturn);
+//		for (int i = 0; i < theBooks.size(); i++) {
+//			listToReturn
+//					.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
+//							.returnTitle(), theBooks.get(i).returnEdition(),
+//							theBooks.get(i).returnPrice(), theBooks.get(i)
+//									.getAuthors()));
+//		}
 
 		return listToReturn;
 	}
@@ -33,19 +44,38 @@ public class CollectionOfBooks {
 
 	}
 
-	public ArrayList<Book> searchBookByTitle(String searchedTitle) {
+	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {
+		ArrayList<Book> listToReturn = new ArrayList<Book>();
+		for(int i=0; i<theBooks.size();i++) {
+			if(theBooks.get(i).returnIsbn().contains(searchedISBN)) {
+				listToReturn.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
+							.returnTitle(), theBooks.get(i).returnEdition(),
+							theBooks.get(i).returnPrice(), theBooks.get(i)
+									.getAuthors()));
+
+			}
+		}
 		
-		return;
+		return listToReturn;
 	}
 
-	public ArrayList<Book> searchBookByIsbn(String searchedISBN) {
+	public ArrayList<Book> getBooksByAuthor(String searchedAuthor) {
+		ArrayList<Book> listToReturn = new ArrayList<Book>();
+		for(int i=0; i<theBooks.size();i++) {
+			for(int j=0;j<theBooks.get(i).getAuthors().size();j++) {
+				
+			}
+			if(theBooks.get(i).getAuthors().contains(searchedAuthor)) {
+				listToReturn.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
+							.returnTitle(), theBooks.get(i).returnEdition(),
+							theBooks.get(i).returnPrice(), theBooks.get(i)
+									.getAuthors()));
 
-		return;
-	}
-
-	public ArrayList<Book> searchBookByAuthor(String searchedAuthor) {
-
-		return;
+			}
+		}
+		
+		
+		return listToReturn;
 	} 
 
 	public String toString(){

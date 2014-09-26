@@ -23,7 +23,7 @@ public class UserInterface {
 		this.printedMenu = 
 				"Welcome, please choose an option:\n" +
 				"1: Add a book to the library.\n" +
-				"2: Remove a book from the library" +
+				"2: Remove a book from the library.\n" +
 				"3: Search the library.\n" +
 				"4: List all the books in the library.\n" +
 				"5: Save and exit.\n";
@@ -118,6 +118,7 @@ public class UserInterface {
 			case TITLE:
 				System.out.println("Please enter the title: ");
 				foundBooks  = library.getBooksByTitle(scan.next());
+				printSearchedBooks(foundBooks);
 				break;
 				
 			case AUTHOR:
@@ -139,6 +140,13 @@ public class UserInterface {
 	
 	public void list(CollectionOfBooks library){
 		System.out.println("Your library contains: ");
-		library.toString();
+		System.out.println(library.toString());
+	}
+	
+	private void printSearchedBooks(ArrayList<Book> list) {
+		String info = "A library object containing " + list.size()+ " books.\n";
+		for(Book b : list)
+			info += b.toString() + "\n";
+		System.out.println(info);
 	}
 }
