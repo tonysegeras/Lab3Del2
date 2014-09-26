@@ -12,6 +12,4 @@ public class CollectionOfBooks {
 	public void addBook(Book book) {
 		theBooks.add(new Book(book.returnIsbn(),book.returnTitle(),book.returnEdition(),book.returnPrice()));
 	}
-	
-	
 }
