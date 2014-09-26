@@ -129,6 +129,7 @@ public class UserInterface {
 			case ISBN:
 				System.out.println("Please enter the ISBN: ");
 				foundBooks  = library.getBooksByIsbn(scan.next());
+				printBooks(foundBooks);
 				break;
 			
 			default:

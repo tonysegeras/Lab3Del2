@@ -53,11 +53,12 @@ public class CollectionOfBooks {
 
 	public ArrayList<Book> getBooksByAuthor(String searchedAuthor) {
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
+
 		for(int i=0; i<theBooks.size();i++) 
-			for(int j=0;j<theBooks.get(i).getAuthors().size();j++) 
-				if(theBooks.get(i).getAuthors().contains(searchedAuthor)) 
+			for(int j=0;j<theBooks.get(i).getAuthors().size();j++) 			
+				if(theBooks.get(i).getAuthors().get(j).returnAuthor().equals(searchedAuthor)) 		
 					listToReturn.add(theBooks.get(i));
-		
+
 		return listToReturn;
 	} 
 
