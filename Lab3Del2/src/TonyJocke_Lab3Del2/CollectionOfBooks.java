@@ -1,9 +1,10 @@
 package TonyJocke_Lab3Del2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CollectionOfBooks implements Comparable<Book> {
+public class CollectionOfBooks implements Comparable<Book>, Serializable {
 	private ArrayList<Book> theBooks;
 
 	public CollectionOfBooks() {
@@ -15,12 +16,10 @@ public class CollectionOfBooks implements Comparable<Book> {
 	}
 
 	public ArrayList<Book> getBooksByTitle(String title) {
-		
-		
 
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
 		for(int i=0; i<theBooks.size();i++) 
-			if(theBooks.get(i).returnTitle().contains(title)) 
+			if(theBooks.get(i).getTitle().contains(title)) 
 				listToReturn.add(theBooks.get(i));
 		
 		Collections.sort(listToReturn);
@@ -35,7 +34,7 @@ public class CollectionOfBooks implements Comparable<Book> {
 	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
 		for(int i=0; i<theBooks.size();i++) 
-			if(theBooks.get(i).returnIsbn().contains(searchedISBN)) 
+			if(theBooks.get(i).getIsbn().contains(searchedISBN)) 
 				listToReturn.add(theBooks.get(i));
 		
 		Collections.sort(listToReturn);
@@ -48,7 +47,7 @@ public class CollectionOfBooks implements Comparable<Book> {
 
 		for(int i=0; i<theBooks.size();i++) 
 			for(int j=0;j<theBooks.get(i).getAuthors().size();j++) 			
-				if(theBooks.get(i).getAuthors().get(j).returnAuthor().equals(searchedAuthor)) 		
+				if(theBooks.get(i).getAuthors().get(j).getAuthor().equals(searchedAuthor)) 		
 					listToReturn.add(theBooks.get(i));
 
 		Collections.sort(listToReturn);
@@ -70,4 +69,6 @@ public class CollectionOfBooks implements Comparable<Book> {
 	public boolean containsBooks(){
 		return (theBooks.size() > 0);
 	}
+	
+	private static final long serialVersionUID = 1L;
 }

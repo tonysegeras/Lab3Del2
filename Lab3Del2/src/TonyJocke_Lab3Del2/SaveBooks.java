@@ -12,6 +12,7 @@ public class SaveBooks {
 			fos = new FileOutputStream(to);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(from);
+			System.out.println("Serialized successfully");
 			
 		} catch(FileNotFoundException e){
 			System.out.println("Couldn't find any previous library files."); // Vad göra annars? Vill ju inte att programmet kraschar direkt...
@@ -20,7 +21,8 @@ public class SaveBooks {
 			e.printStackTrace();
 		}finally{
 			try {
-				fos.close();
+				if(fos != null)
+					fos.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

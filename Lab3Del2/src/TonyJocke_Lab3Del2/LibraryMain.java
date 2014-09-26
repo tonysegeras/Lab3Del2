@@ -10,7 +10,7 @@ public class LibraryMain {
 		
 		// Load books
 		String filename = args[0];
-		LoadBooks.load(library, filename);
+		library = LoadBooks.load(filename);
 		
 		// Begin main program execution
 		UserInterface UI = new UserInterface();

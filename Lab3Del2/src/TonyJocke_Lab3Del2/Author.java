@@ -10,7 +10,7 @@ public class Author implements Serializable {
 		this.name = new String(name);
 	}
 	
-	public String returnAuthor() {
+	public String getAuthor() {
 		String info = this.name;
 		return info;
 	}

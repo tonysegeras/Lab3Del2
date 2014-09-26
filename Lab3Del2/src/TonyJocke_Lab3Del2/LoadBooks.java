@@ -6,16 +6,19 @@ public class LoadBooks {
 	
 	private LoadBooks(){}
 	
-	public static void load(CollectionOfBooks to, String from) throws IOException, ClassNotFoundException{
+	public static CollectionOfBooks load(String from) throws IOException, ClassNotFoundException{
+		
+		CollectionOfBooks library = new CollectionOfBooks();
 		
 		FileInputStream fis = null;
 		try{
 			fis = new FileInputStream(from);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			to = (CollectionOfBooks) ois.readObject();
+			library = (CollectionOfBooks) ois.readObject();
+			System.out.println("Deserialized successfully");
 			
 		} catch(FileNotFoundException e){
-			System.out.println("Couldn't find any previous library files."); // Vad göra annars? Vill ju inte att programmet kraschar direkt...
+			System.out.println("Couldn't find any previous library files.");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 			throw new IOException();
@@ -24,10 +27,13 @@ public class LoadBooks {
 			throw new ClassNotFoundException();
 		}finally{
 			try {
-				fis.close();
+				if(fis != null)
+					fis.close();
 			} catch (IOException e) {
 				// Do nothing...
 			}
-		}	
+		}
+		
+		return library;
 	}
 }

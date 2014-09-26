@@ -69,8 +69,12 @@ public class UserInterface {
 	}
 	
 	public void addBook(CollectionOfBooks library){
+		
+		String title = "";
 		System.out.print("Enter the title: ");
-		String title = scan.next();
+		while(title.length() == 0)
+			title = scan.nextLine();
+
 		System.out.print("Enter the ISBN: ");
 		String isbn = scan.next();
 		System.out.print("Enter the edition: ");

@@ -18,7 +18,7 @@ public class Book implements Comparable<Book>, Serializable {
 		this.price = price;
 		authors = new ArrayList<Author>();
 		for (int i = 0; i < authorAdd.size(); i++) {
-			authors.add(new Author(authorAdd.get(i).returnAuthor()));
+			authors.add(new Author(authorAdd.get(i).getAuthor()));
 		}
 	}
 
@@ -31,17 +31,17 @@ public class Book implements Comparable<Book>, Serializable {
 		return copy;
 	}
 
-	public String returnIsbn() {
+	public String getIsbn() {
 		String info = this.isbn;
 		return info;
 	}
 
-	public String returnTitle() {
+	public String getTitle() {
 		String info = this.title;
 		return info;
 	}
 
-	public int returnEdition() {
+	public int getEdition() {
 		return this.edition;
 	}
 
@@ -50,16 +50,16 @@ public class Book implements Comparable<Book>, Serializable {
 	}
 
 	public int compareTo(Book other) {
-		int res = this.returnTitle().compareTo(other.returnTitle());
+		int res = this.getTitle().compareTo(other.getTitle());
 		
 		return res;
 	}
 
 	public String toString() {
 
-		String info = "Title: " + this.returnTitle() + "; Author(s): ";
+		String info = "Title: " + this.getTitle() + "; Author(s): ";
 		for (int i = 0; i < authors.size(); i++) {
-			info += authors.get(i).returnAuthor();
+			info += authors.get(i).getAuthor();
 			if(i != authors.size()-1)
 				info += ", ";
 		}
