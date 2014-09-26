@@ -10,8 +10,7 @@ public class CollectionOfBooks {
 	}
 
 	public void addBook(Book book) {
-		theBooks.add(new Book(book.returnIsbn(), book.returnTitle(), book
-				.returnEdition(), book.returnPrice()));
+		theBooks.add(new Book(book.returnIsbn(), book.returnTitle(), book.returnEdition(), book.returnPrice()));
 	}
 
 	public ArrayList<Book> getBooksByTitle(String title) {
