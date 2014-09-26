@@ -63,7 +63,7 @@ public class UserInterface {
 				break;
 				
 			default:
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException("Menu only accepts integers 1-5");
 		}
 		return choice;
 	}
@@ -100,7 +100,15 @@ public class UserInterface {
 	}
 	
 	public void removeBook(CollectionOfBooks library){
+		ArrayList<Book> potentialBooks = search(library);
 		
+		if(potentialBooks.size() > 1){
+			System.out.print("Which one would you like to delete? (Enter index): ");
+			for(int i = 0; i < potentialBooks.size(); i++)
+				System.out.println(i+ ": " + potentialBooks.get(i).toString());
+		}
+		int toRemove = scan.nextInt();
+		library.removeBook(potentialBooks.get(toRemove));
 	}
 	
 	public ArrayList<Book> search(CollectionOfBooks library){
@@ -131,7 +139,7 @@ public class UserInterface {
 				foundBooks  = library.getBooksByIsbn(scan.next());
 				printBooks(foundBooks);
 				break;
-			
+			  
 			default:
 				throw new IllegalArgumentException("Only accepts integers 1-3 as arguments");
 		}
@@ -145,7 +153,7 @@ public class UserInterface {
 	}
 	
 	private void printBooks(ArrayList<Book> list) {
-		String info = "A library containing " + list.size()+ " books.\n";
+		String info = "Found " + list.size()+ " books.\n";
 		for(Book b : list)
 			info += b.toString() + "\n";
 		System.out.println(info);

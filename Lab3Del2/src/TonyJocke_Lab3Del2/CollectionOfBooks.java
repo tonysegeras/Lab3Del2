@@ -66,5 +66,4 @@ public class CollectionOfBooks implements Comparable<Book> {
 		
 		return this.compareTo(other);
 	}
-	
 }
