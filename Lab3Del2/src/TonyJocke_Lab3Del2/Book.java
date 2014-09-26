@@ -26,7 +26,6 @@ public class Book implements Comparable<Book> {
 		return copy;
 	}
 	
-	// Haha, ISBN!!
 	public String returnIsbn() {
 		String info = this.isbn;
 		return info;
@@ -44,11 +43,5 @@ public class Book implements Comparable<Book> {
 	public double returnPrice() {
 		return this.price;
 	}
-
-	public int compareTo(Book other) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 
 }
