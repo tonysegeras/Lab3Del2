@@ -69,4 +69,8 @@ public class CollectionOfBooks implements Comparable<Book> {
 	public int compareTo(Book other) {
 		return this.compareTo(other);
 	}
+	
+	public boolean containsBooks(){
+		return (theBooks.size() > 0);
+	}
 }

@@ -99,15 +99,21 @@ public class UserInterface {
 	}
 	
 	public void removeBook(CollectionOfBooks library){
+		
+		if(library.containsBooks()){
+		
 		ArrayList<Book> potentialBooks = search(library);
 		
 		if(potentialBooks.size() > 1){
 			System.out.print("Which one would you like to delete? (Enter index): ");
 			for(int i = 0; i < potentialBooks.size(); i++)
-				System.out.println(i+ ": " + potentialBooks.get(i).toString());
+				System.out.println((i+1)+ ": " + potentialBooks.get(i).toString());
 		}
-		int toRemove = scan.nextInt();
+		int toRemove = scan.nextInt() - 1;
 		library.removeBook(potentialBooks.get(toRemove));
+		}
+		else
+			System.out.println("Your library contains no books.");
 	}
 	
 	public ArrayList<Book> search(CollectionOfBooks library){
