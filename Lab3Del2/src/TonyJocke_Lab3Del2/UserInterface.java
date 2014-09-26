@@ -124,11 +124,13 @@ public class UserInterface {
 			case AUTHOR:
 				System.out.println("Please enter the author: ");
 				foundBooks  = library.getBooksByAuthor(scan.next());
+				printSearchedBooks(foundBooks);
 				break;
 				
 			case ISBN:
 				System.out.println("Please enter the ISBN: ");
 				foundBooks  = library.getBooksByIsbn(scan.next());
+				printSearchedBooks(foundBooks);
 				break;
 			
 			default:
