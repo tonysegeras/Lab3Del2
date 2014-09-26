@@ -51,8 +51,10 @@ public class Book implements Comparable<Book> {
 	}
 
 	public int compareTo(Book other) {
-
-		return title.compareTo(other.title);
+		// TODO Auto-generated method stub
+		
+		
+		return 0;
 	}
 
 	public String toString() {

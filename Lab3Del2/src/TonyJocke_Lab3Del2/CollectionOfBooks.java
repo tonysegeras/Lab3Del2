@@ -46,5 +46,6 @@ public class CollectionOfBooks {
 	public ArrayList<Book> searchBookByAuthor(String searchedAuthor) {
 
 		return;
-	}
+	} 
+	
 }
