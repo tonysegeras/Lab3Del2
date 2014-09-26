@@ -32,7 +32,6 @@ public class Book implements Comparable<Book>, Serializable {
 		return copy;
 	}
 
-	// Haha, ISBN!!
 	public String returnIsbn() {
 		String info = this.isbn;
 		return info;
@@ -60,12 +59,14 @@ public class Book implements Comparable<Book>, Serializable {
 
 	public String toString() {
 
-		String info = "Title: " + this.returnTitle() + ", Author(s) :";
+		String info = "Title: " + this.returnTitle() + "; Author(s): ";
 		for (int i = 0; i < authors.size(); i++) {
-			info += authors.get(i).returnAuthor() + ", ";
+			info += authors.get(i).returnAuthor();
+			if(i != authors.size()-1)
+				info += ", ";
 		}
-		info += "Edition: " + this.edition + ", ISBN: " + this.isbn
-				+ ", Price: " + this.price + ":-";
+		info += "; Edition: " + this.edition + "; ISBN: " + this.isbn
+				+ "; Price: " + this.price + "$";
 		return info;
 	}
 	

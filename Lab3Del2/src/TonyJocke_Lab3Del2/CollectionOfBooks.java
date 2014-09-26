@@ -47,5 +47,12 @@ public class CollectionOfBooks {
 
 		return;
 	} 
-	// HEJ HEJ
+
+	public String toString(){
+		String info = "A library object containing " + theBooks.size() + " books.\n";
+		for(Book b : theBooks)
+			info += b.toString() + "\n";
+		return info;
+	}
+	
 }

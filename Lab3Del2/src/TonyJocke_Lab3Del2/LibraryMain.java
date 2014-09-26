@@ -18,6 +18,6 @@ public class LibraryMain {
 		UI.menu(library);
 		
 		// Save books
-		
+		System.out.println(library.toString());
 	}
 }
