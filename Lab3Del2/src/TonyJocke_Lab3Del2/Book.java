@@ -52,10 +52,9 @@ public class Book implements Comparable<Book>, Serializable {
 	}
 
 	public int compareTo(Book other) {
-		// TODO Auto-generated method stub
+		int res = this.returnTitle().compareTo(other.returnTitle());
 		
-		
-		return 0;
+		return res;
 	}
 
 	public String toString() {

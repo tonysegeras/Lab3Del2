@@ -3,7 +3,7 @@ package TonyJocke_Lab3Del2;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CollectionOfBooks {
+public class CollectionOfBooks implements Comparable<Book> {
 	private ArrayList<Book> theBooks;
 
 	public CollectionOfBooks() {
@@ -15,9 +15,12 @@ public class CollectionOfBooks {
 	}
 
 	public ArrayList<Book> getBooksByTitle(String title) {
+		
+		
+
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
 		for(int i=0; i<theBooks.size();i++) 
-			if(theBooks.get(i).returnTitle().contains(title) || theBooks.get(i).returnTitle().equalsIgnoreCase(title)) 
+			if(theBooks.get(i).returnTitle().contains(title)) 
 				listToReturn.add(theBooks.get(i));
 		
 		Collections.sort(listToReturn);
@@ -26,7 +29,7 @@ public class CollectionOfBooks {
 	}
 
 	public void removeBook(Book book) {
-		this.theBooks.remove(book);
+		theBooks.remove(book);
 	}
 
 	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {
@@ -38,9 +41,6 @@ public class CollectionOfBooks {
 			}
 		}
 		
-		Collections.sort(listToReturn);
-
-		
 		return listToReturn;
 	}
 
@@ -49,20 +49,21 @@ public class CollectionOfBooks {
 
 		for(int i=0; i<theBooks.size();i++) 
 			for(int j=0;j<theBooks.get(i).getAuthors().size();j++) 			
-				if(theBooks.get(i).getAuthors().get(j).returnAuthor().equalsIgnoreCase(searchedAuthor) 
-						|| theBooks.get(i).getAuthors().get(j).returnAuthor().equalsIgnoreCase(searchedAuthor))
+				if(theBooks.get(i).getAuthors().get(j).returnAuthor().equals(searchedAuthor)) 		
 					listToReturn.add(theBooks.get(i));
 
-		Collections.sort(listToReturn);
-		
 		return listToReturn;
 	} 
 
 	public String toString(){
-		String info = theBooks.size() + " Books.\n";
+		String info = "A library object containing " + theBooks.size() + " books.\n";
 		for(Book b : theBooks)
 			info += b.toString() + "\n";
 		return info;
 	}
-	
+
+	public int compareTo(Book other) {
+		
+		return this.compareTo(other);
+	}
 }
