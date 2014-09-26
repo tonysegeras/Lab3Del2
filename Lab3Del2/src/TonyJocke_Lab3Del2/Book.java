@@ -25,8 +25,6 @@ public class Book implements Comparable<Book>, Serializable {
 	public void addAuthor(String author) {
 		authors.add(new Author(author));
 	}
-	
-	
 
 	public ArrayList<Author> getAuthors() {
 		ArrayList<Author> copy = authors;

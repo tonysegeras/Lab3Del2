@@ -34,12 +34,9 @@ public class CollectionOfBooks implements Comparable<Book> {
 
 	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
-		for(int i=0; i<theBooks.size();i++) {
-			if(theBooks.get(i).returnIsbn().contains(searchedISBN)) {
+		for(int i=0; i<theBooks.size();i++) 
+			if(theBooks.get(i).returnIsbn().contains(searchedISBN)) 
 				listToReturn.add(theBooks.get(i));
-
-			}
-		}
 		
 		Collections.sort(listToReturn);
 		
