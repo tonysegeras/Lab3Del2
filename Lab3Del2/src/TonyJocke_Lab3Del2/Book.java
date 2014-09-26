@@ -20,12 +20,13 @@ public class Book implements Comparable<Book>, Serializable {
 		for (int i = 0; i < authorAdd.size(); i++) {
 			authors.add(new Author(authorAdd.get(i).returnAuthor()));
 		}
-		
 	}
 
 	public void addAuthor(String author) {
 		authors.add(new Author(author));
 	}
+	
+	
 
 	public ArrayList<Author> getAuthors() {
 		ArrayList<Author> copy = authors;
