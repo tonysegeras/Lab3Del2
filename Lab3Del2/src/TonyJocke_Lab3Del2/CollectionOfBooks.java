@@ -41,6 +41,8 @@ public class CollectionOfBooks implements Comparable<Book> {
 			}
 		}
 		
+		Collections.sort(listToReturn);
+		
 		return listToReturn;
 	}
 
@@ -52,18 +54,19 @@ public class CollectionOfBooks implements Comparable<Book> {
 				if(theBooks.get(i).getAuthors().get(j).returnAuthor().equals(searchedAuthor)) 		
 					listToReturn.add(theBooks.get(i));
 
+		Collections.sort(listToReturn);
+		
 		return listToReturn;
 	} 
 
 	public String toString(){
-		String info = "A library object containing " + theBooks.size() + " books.\n";
+		String info = theBooks.size() + " books.\n";
 		for(Book b : theBooks)
 			info += b.toString() + "\n";
 		return info;
 	}
 
 	public int compareTo(Book other) {
-		
 		return this.compareTo(other);
 	}
 }

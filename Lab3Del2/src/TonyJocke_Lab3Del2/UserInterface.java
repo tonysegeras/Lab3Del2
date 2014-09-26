@@ -90,7 +90,6 @@ public class UserInterface {
 	private ArrayList<Author> authorsInAList(String author) {
 		ArrayList<Author> authorToTemp = new ArrayList<Author>();
 		
-	
 		String[] parts = author.split(", ");
 		for (String part : parts) {
 			authorToTemp.add(new Author(part));
