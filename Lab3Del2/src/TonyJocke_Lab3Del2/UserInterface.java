@@ -13,7 +13,6 @@ public class UserInterface {
 							SEARCH = 3,
 							LIST = 4,
 							EXIT = 5;
-	
 	// Search menu
 	public static final int TITLE = 1,
 							AUTHOR = 2,
@@ -108,7 +107,7 @@ public class UserInterface {
 
 		System.out.println("What would you like to search the library by?\n" +
 				"1: Title.\n" +
-				"2: Main author.\n" +
+				"2: Author.\n" +
 				"3: ISBN.");
 		int input = scan.nextInt();
 		
@@ -118,12 +117,13 @@ public class UserInterface {
 			case TITLE:
 				System.out.println("Please enter the title: ");
 				foundBooks  = library.getBooksByTitle(scan.next());
-				printSearchedBooks(foundBooks);
+				printBooks(foundBooks);
 				break;
 				
 			case AUTHOR:
 				System.out.println("Please enter the author: ");
 				foundBooks  = library.getBooksByAuthor(scan.next());
+				printBooks(foundBooks);
 				break;
 				
 			case ISBN:
@@ -143,8 +143,8 @@ public class UserInterface {
 		System.out.println(library.toString());
 	}
 	
-	private void printSearchedBooks(ArrayList<Book> list) {
-		String info = "A library object containing " + list.size()+ " books.\n";
+	private void printBooks(ArrayList<Book> list) {
+		String info = "A library containing " + list.size()+ " books.\n";
 		for(Book b : list)
 			info += b.toString() + "\n";
 		System.out.println(info);
