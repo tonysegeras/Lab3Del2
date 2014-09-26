@@ -131,7 +131,7 @@ public class UserInterface {
 				foundBooks  = library.getBooksByIsbn(scan.next());
 				printBooks(foundBooks);
 				break;
-			
+			  
 			default:
 				throw new IllegalArgumentException("Only accepts integers 1-3 as arguments");
 		}
@@ -145,7 +145,7 @@ public class UserInterface {
 	}
 	
 	private void printBooks(ArrayList<Book> list) {
-		String info = "A library containing " + list.size()+ " books.\n";
+		String info = "Found " + list.size()+ " books.\n";
 		for(Book b : list)
 			info += b.toString() + "\n";
 		System.out.println(info);

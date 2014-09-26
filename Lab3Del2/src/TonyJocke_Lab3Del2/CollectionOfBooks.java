@@ -20,7 +20,7 @@ public class CollectionOfBooks {
 
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
 		for(int i=0; i<theBooks.size();i++) 
-			if(theBooks.get(i).returnTitle().contains(title)) 
+			if(theBooks.get(i).returnTitle().contains(title) || theBooks.get(i).returnTitle().equalsIgnoreCase(title)) 
 				listToReturn.add(theBooks.get(i));
 		
 		Collections.sort(listToReturn);
@@ -56,14 +56,15 @@ public class CollectionOfBooks {
 
 		for(int i=0; i<theBooks.size();i++) 
 			for(int j=0;j<theBooks.get(i).getAuthors().size();j++) 			
-				if(theBooks.get(i).getAuthors().get(j).returnAuthor().equals(searchedAuthor)) 		
+				if(theBooks.get(i).getAuthors().get(j).returnAuthor().equalsIgnoreCase(searchedAuthor) 
+						|| theBooks.get(i).getAuthors().get(j).returnAuthor().equalsIgnoreCase(searchedAuthor))
 					listToReturn.add(theBooks.get(i));
 
 		return listToReturn;
 	} 
 
 	public String toString(){
-		String info = "A library object containing " + theBooks.size() + " books.\n";
+		String info = theBooks.size() + " Books.\n";
 		for(Book b : theBooks)
 			info += b.toString() + "\n";
 		return info;
