@@ -10,8 +10,31 @@ public class CollectionOfBooks {
 	}
 	
 	public void addBook(Book book) {
-		theBooks.add(new Book(book.returnIsbn(),book.returnTitle(),book.returnEdition(),book.returnPrice()));
+		theBooks.add(book);
 	}
 	
+	public ArrayList<Book> getBooksByTitle(String title) {
+		
+		return ;
+	}
+	
+	public void removeBook() {
+		
+	}
+	
+	public ArrayList<Book> searchBookByTitle(String searchedTitle) {
+		
+		return ;
+	}
+	
+	public ArrayList<Book> searchBookByIsbn(String searchedISBN) {
+		
+		return ;
+	}
+	
+	public ArrayList<Book> searchBookByAuthor(String searchedAuthor) {
+		
+		return ; 
+	}
 	
 }
