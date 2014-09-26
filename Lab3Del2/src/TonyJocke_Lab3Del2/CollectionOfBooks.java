@@ -15,28 +15,18 @@ public class CollectionOfBooks {
 	}
 
 	public ArrayList<Book> getBooksByTitle(String title) {
-		
-		
-
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
 		for(int i=0; i<theBooks.size();i++) 
 			if(theBooks.get(i).returnTitle().contains(title) || theBooks.get(i).returnTitle().equalsIgnoreCase(title)) 
 				listToReturn.add(theBooks.get(i));
 		
 		Collections.sort(listToReturn);
-//		for (int i = 0; i < theBooks.size(); i++) {
-//			listToReturn
-//					.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
-//							.returnTitle(), theBooks.get(i).returnEdition(),
-//							theBooks.get(i).returnPrice(), theBooks.get(i)
-//									.getAuthors()));
-//		}
 
 		return listToReturn;
 	}
 
-	public void removeBook() {
-
+	public void removeBook(Book book) {
+		this.theBooks.remove(book);
 	}
 
 	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {
@@ -47,6 +37,9 @@ public class CollectionOfBooks {
 
 			}
 		}
+		
+		Collections.sort(listToReturn);
+
 		
 		return listToReturn;
 	}
@@ -60,6 +53,8 @@ public class CollectionOfBooks {
 						|| theBooks.get(i).getAuthors().get(j).returnAuthor().equalsIgnoreCase(searchedAuthor))
 					listToReturn.add(theBooks.get(i));
 
+		Collections.sort(listToReturn);
+		
 		return listToReturn;
 	} 
 
