@@ -1,10 +1,10 @@
 package TonyJocke_Lab3Del2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CollectionOfBooks {
 	private ArrayList<Book> theBooks;
-	
 
 	public CollectionOfBooks() {
 		theBooks = new ArrayList<Book>();
@@ -15,9 +15,18 @@ public class CollectionOfBooks {
 	}
 
 	public ArrayList<Book> getBooksByTitle(String title) {
-		
-		//HEJ HEJ JOCKE
-		return;
+		Collections.sort(theBooks);
+		ArrayList<Book> listToReturn = new ArrayList<Book>();
+
+		for (int i = 0; i < theBooks.size(); i++) {
+			listToReturn
+					.add(new Book(theBooks.get(i).returnIsbn(), theBooks.get(i)
+							.returnTitle(), theBooks.get(i).returnEdition(),
+							theBooks.get(i).returnPrice(), theBooks.get(i)
+									.getAuthors()));
+		}
+
+		return listToReturn;
 	}
 
 	public void removeBook() {
