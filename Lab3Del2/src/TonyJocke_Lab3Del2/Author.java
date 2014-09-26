@@ -1,6 +1,9 @@
 package TonyJocke_Lab3Del2;
 
-public class Author{
+import java.io.Serializable;
+
+public class Author implements Serializable {
+	
 	private String name;
 	
 	public Author(String name) {
@@ -16,4 +19,6 @@ public class Author{
 		String info = this.name;
 		return info;
 	}
+	
+	private static final long serialVersionUID = 1L;
 }

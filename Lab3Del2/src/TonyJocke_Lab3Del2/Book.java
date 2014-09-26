@@ -1,8 +1,9 @@
 package TonyJocke_Lab3Del2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Book implements Comparable<Book> {
+public class Book implements Comparable<Book>, Serializable {
 	private String isbn;
 	private String title;
 	private int edition;
@@ -67,5 +68,6 @@ public class Book implements Comparable<Book> {
 				+ ", Price: " + this.price + ":-";
 		return info;
 	}
-
+	
+	private static final long serialVersionUID = 1L;
 }
