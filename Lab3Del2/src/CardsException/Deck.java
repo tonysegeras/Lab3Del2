@@ -44,7 +44,7 @@ public class Deck {
 		}
 	}
 	
-	public boolean removeCard(Card card){
+	public boolean removeCard(Card card) {
 		for(int i = 0; i < this.Deck.length; i++)
 			if(Deck[i].equals(card)){
 				this.pack(i);
@@ -52,7 +52,6 @@ public class Deck {
 			}
 		
 		throw new NoSuchCardException(card.toString() + " has already been dealt.");
-		
 	}
 	
 	/** Pseudo-randomly shuffle the deck by stepping through the array and swapping cards. */
@@ -68,12 +67,11 @@ public class Deck {
 		}
 	}
 	
-	/** Fill the deck with shuffled cards. */
+	/** Fill the deck with sorted cards. */
 	private void createNewCards(){
 		for(int i = 0; i < this.Deck.length; i++)
 			this.Deck[i] = new Card((i % 13)+1, (i/13)+1);
 	}
-	
 	
 	/** Removes the card at index and moves every card after it one step down into the array. */
 	private void pack(int index){

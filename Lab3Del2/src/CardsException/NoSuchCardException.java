@@ -6,9 +6,6 @@ public class NoSuchCardException extends java.lang.RuntimeException {
 	
 	private static final int NOT_AVAILABLE = -1;
 	
-	@SuppressWarnings("unused")
-	private NoSuchCardException(){} // Not allowed to create this exception without a message.
-	
 	public NoSuchCardException(String msg){
 		super(msg);
 		index = NOT_AVAILABLE;
