@@ -14,7 +14,7 @@ public class CardgameMain {
 		
 		while(player.isPlaying() || dealer.isPlaying()){
 			if(first_round == true){
-				player.addCard()DeckOfCards.Deal());
+				player.addCard(DeckOfCards.Deal());
 				first_round = false;
 			}
 			
@@ -27,7 +27,6 @@ public class CardgameMain {
 					player.stopPlaying();
 					dealer.stopPlaying();
 				}
-				
 			}
 			
 			if(dealer.isPlaying()){
