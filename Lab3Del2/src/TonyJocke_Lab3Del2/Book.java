@@ -21,6 +21,23 @@ public class Book implements Comparable<Book>, Serializable {
 			authors.add(new Author(authorAdd.get(i).getAuthor()));
 		}
 	}
+	
+	public Book(Book book) {
+		this.isbn = new String(book.getIsbn());
+		this.title = new String(book.getTitle());
+		this.edition = book.getEdition();
+		this.price = book.price;
+		
+		authors = new ArrayList<Author>();
+		for(Author a : book.authors)
+			this.authors.add(new Author(a.getAuthor()));
+	}
+	
+	public void toLowerCase(){
+		this.title.toLowerCase();
+		for(Author a: authors)
+			a.setAuthor( a.getAuthor().toLowerCase() );
+	}
 
 	public void addAuthor(String author) {
 		authors.add(new Author(author));
