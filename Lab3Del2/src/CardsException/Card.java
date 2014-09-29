@@ -2,13 +2,13 @@ package CardsException;
 
 import java.util.Random;
 
-public class Card implements Comparable<Card>{
-	/** Objects of this class represents cards in
-	 *	a deck (of cards).
-	 *	A card is immutable, i.e. once created its
-	 *	rank or suit cannot be changed.
-	 */
-		
+/** Objects of this class represents cards in
+ *	a deck (of cards).
+ *	A card is immutable, i.e. once created its
+ *	rank or suit cannot be changed.
+ */
+
+public class Card{
 	private final Rank rank;
 	private final Suit suit;
 
@@ -26,7 +26,8 @@ public class Card implements Comparable<Card>{
 	
 	public Card(int newRank, int newSuit){
 		if( newRank > 13 || newSuit > 4 || newRank < 1 || newSuit < 0)
-			throw new NoSuchCardException("Tried to create a card with bad values");
+			throw new IllegalArgumentException("Tried to create a card with bad values");
+		
 		this.rank = Rank.pollRank(newRank);
 		this.suit = Suit.pollSuit(newSuit);
 	}
@@ -52,10 +53,5 @@ public class Card implements Comparable<Card>{
 		String info = new String();
 		info += this.getRank() + " of " + this.getSuit();
 		return info;
-	}
-
-	public int compareTo(Card other) {
-		return ((this.getRank().getRank() - other.getRank().getRank()) +
-				(this.getSuit().getSuit() - other.getSuit().getSuit()));
 	}
 }

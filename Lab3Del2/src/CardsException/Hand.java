@@ -1,15 +1,12 @@
 package CardsException;
 
 public class Hand {
-	private int score, noOfCards;
-	private Card[] Cards;
-	private boolean playing;
+	protected int noOfCards;
+	protected Card[] Cards;
 	
 	public Hand(){
-		this.score = 0;
 		this.noOfCards = 0;
 		this.Cards = new Card[52];
-		this.playing = true;
 	}
 	
 	public void addCard(Card newCard){
@@ -27,21 +24,18 @@ public class Hand {
 		return false;
 	}
 	
-	public int getScore(){
-		return this.score;
-	}
-	public boolean isPlaying(){
-		return this.playing;
-	}
-	public void stopPlaying(){
-		this.playing = false;
-	}
-	
 	/** Shifts all cards to the right of index one step left. */
 	public void packHand(int index){
 		for(int i = index; i < this.Cards.length; i++){
 			this.Cards[i] = this.Cards[i+1]; 
 		}
+	}
+	
+	public Card[] getCards(){
+		Card[] temp = new Card[this.noOfCards];
+		for(int i = 0; i < this.noOfCards; i++)
+			temp[i] = new Card(this.Cards[i]);
+		return temp;
 	}
 	
 	public String toString(){
@@ -51,7 +45,6 @@ public class Hand {
 			for(int i = 0; i < noOfCards; i++)
 				info += Cards[i].toString() + ", ";
 		}
-		info += "which is " + score + " points";
 		return info;
 	}
 }
