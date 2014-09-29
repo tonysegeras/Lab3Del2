@@ -47,7 +47,7 @@ public class CollectionOfBooks implements Comparable<Book>, Serializable {
 
 		for(int i=0; i<theBooks.size();i++) 
 			for(int j=0;j<theBooks.get(i).getAuthors().size();j++) 			
-				if(theBooks.get(i).getAuthors().get(j).getAuthor().equals(searchedAuthor)) 		
+				if(theBooks.get(i).getAuthors().get(j).getAuthor().contains(searchedAuthor) || theBooks.get(i).getAuthors().get(j).getAuthor().equalsIgnoreCase(searchedAuthor)) 		
 					listToReturn.add(theBooks.get(i));
 
 		Collections.sort(listToReturn);
