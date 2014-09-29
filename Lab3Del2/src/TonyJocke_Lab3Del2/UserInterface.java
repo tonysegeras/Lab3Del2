@@ -1,5 +1,7 @@
 package TonyJocke_Lab3Del2;
 
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -33,13 +35,26 @@ public class UserInterface {
 		int x = 0;
 		while(x != 5){
 			System.out.println(printedMenu);
-			x = menuChoice(library);
+			try{
+				x = menuChoice(library);
+			}catch(IllegalArgumentException e){
+				System.out.println("Error, couldn't recognize user input.\nPlease enter a single integer between 1 and 6");
+			}catch(InputMismatchException e){
+				System.out.println("Error, couldn't recognize user input.\nPlease enter a single integer between 1 and 6");
+				throw e;
+			}
 		}
 		System.out.println("Thank you for using the Tony&Joakim proprietary library software system.\nHave a nice day!");
 	}
 	
-	public int menuChoice(CollectionOfBooks library){
-		int choice = scan.nextInt();
+	public int menuChoice(CollectionOfBooks library) throws IllegalArgumentException, NoSuchElementException{
+		
+		int choice = 0;
+		try{
+			choice = scan.nextInt();
+		}catch(NoSuchElementException e){
+			throw e;
+		}
 			
 		switch(choice){
 			case ADD:
@@ -63,12 +78,12 @@ public class UserInterface {
 				break;
 				
 			default:
-				throw new IllegalArgumentException("Menu only accepts integers 1-5");
+				throw new IllegalArgumentException("Menu only accepts integers " + ADD + "-" + REMOVE);
 		}
 		return choice;
 	}
 	
-	public void addBook(CollectionOfBooks library){
+	public void addBook(CollectionOfBooks library) throws IllegalArgumentException{
 		
 		String title = "";
 		System.out.print("Enter the title: ");
@@ -102,7 +117,7 @@ public class UserInterface {
 		return authorToTemp;
 	}
 	
-	public void removeBook(CollectionOfBooks library){
+	public void removeBook(CollectionOfBooks library) throws IllegalArgumentException{
 		
 		if(library.containsBooks()){
 		
@@ -126,7 +141,7 @@ public class UserInterface {
 			System.out.println("Your library contains no books.");
 	}
 	
-	public ArrayList<Book> search(CollectionOfBooks library){
+	public ArrayList<Book> search(CollectionOfBooks library) throws IllegalArgumentException{
 
 		System.out.println("What would you like to search the library by?\n" +
 				"1: Title.\n" +
