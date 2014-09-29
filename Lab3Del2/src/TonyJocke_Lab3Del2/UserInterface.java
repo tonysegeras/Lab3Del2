@@ -133,7 +133,11 @@ public class UserInterface {
 		switch(input){
 			case TITLE:
 				System.out.println("Please enter the title: ");
-				foundBooks  = library.getBooksByTitle(scan.next());
+				String temp = "";
+				while(temp.length() == 0)
+					temp = scan.nextLine();
+				foundBooks  = library.getBooksByTitle(temp);
+				
 				printBooks(foundBooks);
 				break;
 				
