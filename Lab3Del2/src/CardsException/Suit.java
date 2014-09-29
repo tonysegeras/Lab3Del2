@@ -1,11 +1,11 @@
 package CardsException;
 
-public enum suit {
+public enum Suit {
 	HEARTS(1), SPADES(2), CLUBS(3), DIAMONDS(4);
 	
 	private int suit;
 	
-	suit(int suit){
+	Suit(int suit){
 		this.suit = suit;
 	}
 	
@@ -13,7 +13,7 @@ public enum suit {
 		return this.suit;
 	}
 	
-	public static suit pollSuit(int index){
+	public static Suit pollSuit(int index){
 		switch(index){
 		case 1:
 			return HEARTS;

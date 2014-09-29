@@ -9,35 +9,35 @@ public class Card {
 	 *	rank or suit cannot be changed.
 	 */
 		
-	private final rank rank;
-	private final suit suit;
+	private final Rank rank;
+	private final Suit suit;
 
 	public Card(){
 		Random rand = new Random();
 
-		this.rank = first_part.rank.pollRank(rand.nextInt(13) + 1);
-		this.suit = first_part.suit.pollSuit(rand.nextInt(4) + 1);
+		this.rank = Rank.pollRank(rand.nextInt(13) + 1);
+		this.suit = Suit.pollSuit(rand.nextInt(4) + 1);
 	}
 
-	public CardWithEnums(rank newRank, suit newSuit) {
+	public Card(Rank newRank, Suit newSuit) {
 		this.rank = newRank;
 		this.suit = newSuit;
 	}
 	
-	public CardWithEnums(int newRank, int newSuit) {
-		this.rank = first_part.rank.pollRank(newRank);
-		this.suit = first_part.suit.pollSuit(newSuit);
+	public Card(int newRank, int newSuit) {
+		this.rank = Rank.pollRank(newRank);
+		this.suit = Suit.pollSuit(newSuit);
 	}
 		
-	public rank getRank() {
+	public Rank getRank() {
 		return rank;
 	}
 		
-	public suit getSuit() {
+	public Suit getSuit() {
 		return suit;
 	}
 		
-	public boolean equals(CardWithEnums other) {
+	public boolean equals(Card other) {
 		return (this.getRank() == other.getRank() && this.getSuit() == other.getSuit());
 	}
 		

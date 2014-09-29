@@ -25,10 +25,10 @@ public class Deck {
 		createNewCards();
 	}
 	
-	/** Returns a card from the top of the deck. If it was the last card the deck is filled and shuffled. */
-	public Card Deal(){
+	/** Returns a card from the top of the deck. */
+	public Card Deal() throws NoSuchCardException{
 		if(cardsLeft < 1)
-			createNewCards();
+			throw new NoSuchCardException();
 
 		Card temp = new Card(this.Deck[cardsLeft-1].getRank(), this.Deck[cardsLeft-1].getSuit() );
 		cardsLeft--;
