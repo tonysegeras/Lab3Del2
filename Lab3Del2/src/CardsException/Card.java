@@ -1,5 +1,6 @@
 package CardsException;
 
+import java.util.Comparator;
 import java.util.Random;
 
 /** Objects of this class represents cards in
@@ -8,7 +9,7 @@ import java.util.Random;
  *	rank or suit cannot be changed.
  */
 
-public class Card{
+public class Card implements Comparator<Card>{
 	private final Rank rank;
 	private final Suit suit;
 
@@ -53,5 +54,17 @@ public class Card{
 		String info = new String();
 		info += this.getRank() + " of " + this.getSuit();
 		return info;
+	}
+
+	
+	// Vad göra med dessa??
+	public int compare(Card o1, Card o2) {
+		
+		return 1000;
+	}
+
+	public int compare(BlackjackCard o1, BlackjackCard o2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

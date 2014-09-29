@@ -9,11 +9,12 @@ public class Hand {
 		this.Cards = new Card[52];
 	}
 	
+	/** Adds a new card to the hand. */
 	public void addCard(Card newCard){
 		this.Cards[noOfCards++] = new Card(newCard.getRank(), newCard.getSuit());
 	}
 	
-	/** Only removes the first occurrence of a card, therefore assumes only one deck of cards is in play. */
+	/** Removes the first occurrence of a card in the hand. */
 	public boolean removeCard(Card toRemove){
 		if(noOfCards < 1)
 			throw new NoSuchCardException("Can't remove cards from an empty hand.");
@@ -36,7 +37,7 @@ public class Hand {
 	public Card[] getCards(){
 		Card[] temp = new Card[this.noOfCards];
 		for(int i = 0; i < this.noOfCards; i++)
-			temp[i] = new Card(this.Cards[i]);
+			temp[i] = new Card((Card) this.Cards[i]);
 		return temp;
 	}
 	
