@@ -2,7 +2,7 @@ package CardsException;
 
 import java.util.Random;
 
-public class Card {
+public class Card implements Comparable<Card>{
 	/** Objects of this class represents cards in
 	 *	a deck (of cards).
 	 *	A card is immutable, i.e. once created its
@@ -28,6 +28,10 @@ public class Card {
 		this.rank = Rank.pollRank(newRank);
 		this.suit = Suit.pollSuit(newSuit);
 	}
+	public Card(Card copy) {
+		this.rank = copy.getRank();
+		this.suit = copy.getSuit();
+	}
 		
 	public Rank getRank() {
 		return rank;
@@ -45,5 +49,10 @@ public class Card {
 		String info = new String();
 		info += this.getRank() + " of " + this.getSuit();
 		return info;
+	}
+
+	public int compareTo(Card other) {
+		return ((this.getRank().getRank() - other.getRank().getRank()) +
+				(this.getSuit().getSuit() - other.getSuit().getSuit()));
 	}
 }
