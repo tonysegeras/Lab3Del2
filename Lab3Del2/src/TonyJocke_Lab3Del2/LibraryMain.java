@@ -7,17 +7,23 @@ public class LibraryMain {
 		
 		// Initialize
 		CollectionOfBooks library = new CollectionOfBooks();
+		String filename = "";
 		
 		// Load books
-		String filename = args[0];
-		library = LoadBooks.load(filename);
+		if(args.length == 1){
+			filename = args[0];
+			library = LoadBooks.load(filename);
+		}
+		else{
+			System.out.println("Error, please invoke with a file name as argument (ex: library.ser).");
+			System.exit(0);
+		}
 		
 		// Begin main program execution
 		UserInterface UI = new UserInterface();
 		UI.menu(library);
 		
 		// Save books when user wants to quit
-		SaveBooks.save(library, filename);
-		
+		SaveBooks.save(library, filename);	
 	}
 }
