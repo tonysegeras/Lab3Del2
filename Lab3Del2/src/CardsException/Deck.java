@@ -26,9 +26,9 @@ public class Deck {
 	}
 	
 	/** Returns a card from the top of the deck. */
-	public Card Deal() throws NoSuchCardException{
+	public Card Deal(){
 		if(cardsLeft < 1)
-			throw new NoSuchCardException();
+			throw new NoSuchCardException("Tried to deal a card but the deck was empty.");
 
 		Card temp = new Card(this.Deck[cardsLeft-1].getRank(), this.Deck[cardsLeft-1].getSuit() );
 		cardsLeft--;

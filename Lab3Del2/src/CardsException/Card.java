@@ -24,10 +24,13 @@ public class Card implements Comparable<Card>{
 		this.suit = newSuit;
 	}
 	
-	public Card(int newRank, int newSuit) {
+	public Card(int newRank, int newSuit){
+		if( newRank > 13 || newSuit > 4 || newRank < 1 || newSuit < 0)
+			throw new NoSuchCardException("Tried to create a card with bad values");
 		this.rank = Rank.pollRank(newRank);
 		this.suit = Suit.pollSuit(newSuit);
 	}
+	
 	public Card(Card copy) {
 		this.rank = copy.getRank();
 		this.suit = copy.getSuit();
