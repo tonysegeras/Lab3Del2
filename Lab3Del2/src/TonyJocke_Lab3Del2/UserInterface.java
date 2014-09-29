@@ -106,15 +106,21 @@ public class UserInterface {
 		
 		if(library.containsBooks()){
 		
-		ArrayList<Book> potentialBooks = search(library);
-		
-		if(potentialBooks.size() > 1){
-			System.out.print("Which one would you like to delete? (Enter index): ");
-			for(int i = 0; i < potentialBooks.size(); i++)
-				System.out.println((i+1)+ ": " + potentialBooks.get(i).toString());
-		}
-		int toRemove = scan.nextInt() - 1;
-		library.removeBook(potentialBooks.get(toRemove));
+			ArrayList<Book> potentialBooks = search(library);
+			
+			int toRemove;
+			if(potentialBooks.size() > 1){
+				System.out.println("Which one would you like to delete? (Enter index): ");
+				for(int i = 0; i < potentialBooks.size(); i++)
+					System.out.println((i+1)+ ": " + potentialBooks.get(i).toString());
+				toRemove = scan.nextInt() - 1;
+			} else {
+				System.out.println("Enter 1 if you want to delete the book.");
+				toRemove = scan.nextInt() - 1;
+			}
+			
+			library.removeBook(potentialBooks.get(toRemove));
+			System.out.println("Book removed successfully!");
 		}
 		else
 			System.out.println("Your library contains no books.");
