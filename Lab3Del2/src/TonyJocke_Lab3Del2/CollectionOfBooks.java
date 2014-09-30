@@ -4,17 +4,35 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * A object representing a list of books.
+ */
 public class CollectionOfBooks implements Comparable<Book>, Serializable {
 	private ArrayList<Book> theBooks;
 
+	/**
+	 * Constructor, creates a ArrayList of books.
+	 */
 	public CollectionOfBooks() {
 		theBooks = new ArrayList<Book>();
 	}
 
+	/**
+	 * Adds a book to the list of books.
+	 * @param book adds a book to the ArrayList of books
+	 */
 	public void addBook(Book book) {
 		theBooks.add(book);
 	}
 
+	/**
+	 * Makes a temporary ArrayList of books that is searched for by title and then sorted. 
+	 * Makes the titles and authors of the books to lower case-letters in a temporary ArrayList
+	 * so that the search don't have to be case sensitive. Then adds the books to the ArrayList 
+	 * and the list gets sorted before returning it. 
+	 * @param title The title the book(s) is searched from
+	 * @return Returns a ArrayList with books based on the search, the list is sorted alphabetically.
+	 */
 	public ArrayList<Book> getBooksByTitle(String title) {
 		
 		ArrayList<Book> temp = new ArrayList<Book>();
@@ -33,12 +51,12 @@ public class CollectionOfBooks implements Comparable<Book>, Serializable {
 		return listToReturn;
 	}
 
+	/**
+	 * Removes the specific book from the list of books.
+	 * @param book The specified book that will be deleted
+	 */
 	public void removeBook(Book book) {
 		theBooks.remove(book);
-	}
-	
-	public void toLowerCase(ArrayList<Book> books){
-		
 	}
 
 	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {	

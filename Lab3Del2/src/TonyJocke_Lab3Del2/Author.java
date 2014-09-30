@@ -2,6 +2,9 @@ package TonyJocke_Lab3Del2;
 
 import java.io.Serializable;
 
+/**
+ * Represents an author of a book. Is Serializable.
+ */
 public class Author implements Serializable {
 
 	private String name;
