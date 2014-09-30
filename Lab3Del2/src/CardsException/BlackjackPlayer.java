@@ -1,5 +1,7 @@
 package CardsException;
 
+import java.util.Arrays;
+
 public class BlackjackPlayer extends Hand{
 	private int score, aces;
 	private boolean playing;

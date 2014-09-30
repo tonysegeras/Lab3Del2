@@ -1,5 +1,6 @@
 package CardsException;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Deck {
@@ -83,7 +84,12 @@ public class Deck {
 	public String toString(){
 		String info = new String();
 		for(int i = 0; i < this.cardsLeft; i++)
-			info += this.Deck[i].toString() + " ";
+			info += this.Deck[i].toString() + "\n";
 		return info;
+	}
+	
+	public String printSortetDeck(){
+		Arrays.sort(Deck,new BlackjackSort());
+		return this.toString();
 	}
 }

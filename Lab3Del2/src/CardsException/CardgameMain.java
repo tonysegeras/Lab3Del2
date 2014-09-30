@@ -12,7 +12,10 @@ public class CardgameMain {
 		
 		boolean first_round = true;
 		
+		System.out.println(DeckOfCards.printSortetDeck());
+		
 		while(player.isPlaying() || dealer.isPlaying()){
+			DeckOfCards.shuffle();
 			if(first_round == true){
 				player.addCard(DeckOfCards.Deal());
 				first_round = false;
