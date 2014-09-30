@@ -28,9 +28,9 @@ public class CollectionOfBooks implements Comparable<Book>, Serializable {
 	/**
 	 * Makes a temporary ArrayList of books that is searched for by title and then sorted. 
 	 * Makes the titles and authors of the books to lower case-letters in a temporary ArrayList
-	 * so that the search don't have to be case sensitive. Then adds the books to the ArrayList 
+	 * so that the search doesn't have to be case sensitive. Then adds the books to the ArrayList 
 	 * and the list gets sorted before returning it. 
-	 * @param title The title the book(s) is searched from
+	 * @param title The title the book(s) is searched for
 	 * @return Returns a ArrayList with books based on the search, the list is sorted alphabetically.
 	 */
 	public ArrayList<Book> getBooksByTitle(String title) {
@@ -59,6 +59,12 @@ public class CollectionOfBooks implements Comparable<Book>, Serializable {
 		theBooks.remove(book);
 	}
 
+	/**
+	 * Makes a temporary ArrayList of books that is searched for by ISBN and then sorted. 
+	 * Adds the books to the ArrayList and the list gets sorted before returning it. 
+	 * @param searchedISBN The ISBN-code the book(s) is searched for
+	 * @return Returns a ArrayList with books based on the search.
+	 */
 	public ArrayList<Book> getBooksByIsbn(String searchedISBN) {	
 		ArrayList<Book> listToReturn = new ArrayList<Book>();
 		for(int i=0; i<theBooks.size();i++) 
@@ -70,6 +76,14 @@ public class CollectionOfBooks implements Comparable<Book>, Serializable {
 		return listToReturn;
 	}
 
+	/**
+	 * Makes a temporary ArrayList of books that is searched for by author and then sorted. 
+	 * Makes the searched author string and the titles and authors of the books to lower case-letters in a temporary ArrayList
+	 * so that the search doesn't have to be case sensitive. Then adds the books to the ArrayList 
+	 * and the list gets sorted before returning it.
+	 * @param searchedAuthor The author the book(s) is searched for
+	 * @return Returns a ArrayList with books based on the search.
+	 */
 	public ArrayList<Book> getBooksByAuthor(String searchedAuthor) {
 		
 		ArrayList<Book> temp = new ArrayList<Book>();
@@ -91,6 +105,11 @@ public class CollectionOfBooks implements Comparable<Book>, Serializable {
 		return listToReturn;
 	} 
 
+	/**
+	 * Method to print out information of the book collection. Prints number of books 
+	 * and the information of every book.
+	 * @return Returns a String representation of the collection of books.
+	 */
 	public String toString(){
 		String info = theBooks.size() + " books.\n";
 		for(Book b : theBooks)
@@ -98,10 +117,18 @@ public class CollectionOfBooks implements Comparable<Book>, Serializable {
 		return info;
 	}
 
+	/**
+	 * Compares this book to another book.
+	 * @return Returns an integer based on the return of the books compareTo-method.
+	 */
 	public int compareTo(Book other) {
 		return this.compareTo(other);
 	}
 	
+	/**
+	 * Checking if the ArrayList of books is containing any books.
+	 * @return Returns a boolean if there are any books in the ArrayList.
+	 */
 	public boolean containsBooks(){
 		return (theBooks.size() > 0);
 	}

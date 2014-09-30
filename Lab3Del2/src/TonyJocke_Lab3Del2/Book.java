@@ -110,9 +110,10 @@ public class Book implements Comparable<Book>, Serializable {
 	}
 
 	/**
-	 * Compares this book to another book .
+	 * Compares this book to another book by title.
 	 * @param other the other book that will be compared to
-	 * @return Returns an integer, positive if the books are equal, negative if not.
+	 * @return Returns an integer, positive if this book is 'greater' than the other, zero if they are equal,
+	 * and negative if this book is 'smaller' than the other, All based on comparison of the books titles.
 	 */
 	public int compareTo(Book other) {
 		int res = this.getTitle().compareTo(other.getTitle());
