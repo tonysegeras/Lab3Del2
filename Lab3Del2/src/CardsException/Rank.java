@@ -1,11 +1,22 @@
 package CardsException;
 
+/**
+ * Represents the rank of a playing card.
+ * 
+ *
+ */
+
 public enum Rank{
 	ACE(1), TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7),
 	EIGTH(8), NINE(9), TEN(10), JACK(11), QUEEN(12), KING(13);
 	
 	private int rank;
 	
+	
+	/**
+	 * Enumeration constructor.
+	 * @param rank	The integer value of the desired rank.
+	 */
 	Rank(int rank){
 		this.rank = rank;
 	}
@@ -13,7 +24,11 @@ public enum Rank{
 	public int getRank(){
 		return this.rank;
 	}
-	
+	/**
+	 * Translates integer values to a corresponding rank.
+	 * @param index	The integer value of a rank.
+	 * @return The suit of the corresponding supplied argument.
+	 */
 	public static Rank pollRank(int index){
 		switch(index){
 		case 1: 

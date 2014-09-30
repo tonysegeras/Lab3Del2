@@ -2,7 +2,7 @@ package CardsException;
 
 
 /**
- * A way to represent a playing cards suit in a type-safe manner.
+ * Represents the suit of a playing card.
  * 
  *
  */
