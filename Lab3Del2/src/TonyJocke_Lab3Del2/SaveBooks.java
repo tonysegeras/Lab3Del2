@@ -2,10 +2,22 @@ package TonyJocke_Lab3Del2;
 
 import java.io.*;
 
+/**
+ * Saving the books in a library to a file.
+ */
 public class SaveBooks {
 	
+	/**
+	 * Constructor.
+	 */
 	private SaveBooks(){}
 	
+	/**
+	 * The method that saves the books information from a library to a specified file.
+	 * Writes to a file from a ObjectOutputStream through a FileOutputStream.
+	 * @param from The CollectionOfBooks-object that will be saved to file. 
+	 * @param to The filename to save the information to.
+	 */
 	public static void save(CollectionOfBooks from, String to){
 		FileOutputStream fos = null;
 		try{

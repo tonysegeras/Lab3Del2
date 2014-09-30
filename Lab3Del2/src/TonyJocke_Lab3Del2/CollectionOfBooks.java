@@ -6,6 +6,7 @@ import java.util.Collections;
 
 /**
  * A object representing a list of books.
+ * Contains a comparable of the class Book. Is serializable.
  */
 public class CollectionOfBooks implements Comparable<Book>, Serializable {
 	private ArrayList<Book> theBooks;

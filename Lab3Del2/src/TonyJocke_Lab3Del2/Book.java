@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Objects of this class is used in a library of books
- *
+ * Objects of this class is used in a library of books.
+ * Contains a comparable of this class. Is serializable.
  */
 public class Book implements Comparable<Book>, Serializable {
 	private String isbn;
