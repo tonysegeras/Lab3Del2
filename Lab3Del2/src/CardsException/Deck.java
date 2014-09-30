@@ -3,11 +3,21 @@ package CardsException;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * A deck of cards.
+ * 
+ * 
+ * 
+ * 
+ *
+ */
+
 public class Deck {
 	private Card[] Deck;
 	private int cardsLeft;
 	
-	/** Create a standard deck of 52 cards */
+	/** Class constructor.
+	 *  Create a standard deck of 52 cards */
 	public Deck(){
 		this.cardsLeft = 52;
 		this.Deck = new Card[52];
@@ -16,7 +26,9 @@ public class Deck {
 		this.shuffle();
 	}
 	
-	/** Create a custom deck with an arbitrary amount of cards */
+	/** Class constructor specifying number of cards in the deck object.
+	 * 	@param noOfCards	The amount of cards the new deck will contain.
+	 * */
 	public Deck(int noOfCards){
 		this.cardsLeft = noOfCards;
 		this.Deck = new Card[noOfCards];
@@ -25,7 +37,10 @@ public class Deck {
 		this.shuffle();
 	}
 	
-	/** Returns a card from the top of the deck. */
+	/** Returns a card from the deck and decreases number of cards in the deck.
+	 *  @return The card which was dealt from the deck.
+	 *  @throws NoSuchCardException
+	 *  */
 	public Card Deal(){
 		if(cardsLeft < 1)
 			throw new NoSuchCardException("Tried to deal a card but the deck was empty.");
@@ -35,7 +50,11 @@ public class Deck {
 		return temp;
 	}
 	
-	/** Removes a card at the specified index. */
+	/** Removes a card at the specified index. 
+	 * @param	index	The index of the card to remove in the deck.
+	 * @return			true if the card at index was removed.
+	 * @throws 			NoSuchCardException
+	 * */
 	public boolean removeCard(int index){
 		if(index > cardsLeft)
 			throw new NoSuchCardException("Couldn't remove card", index);
