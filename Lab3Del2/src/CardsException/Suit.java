@@ -1,18 +1,36 @@
 package CardsException;
 
+
+/**
+ * A way to represent a playing cards suit in a type-safe manner.
+ * 
+ *
+ */
 public enum Suit {
 	HEARTS(4), SPADES(3), CLUBS(1), DIAMONDS(2);
 	
 	private int suit;
 	
+	/**
+	 * Enumeration constructor.
+	 * @param suit	The integer value of the desired suit.
+	 */
 	Suit(int suit){
 		this.suit = suit;
 	}
-	
+	/**
+	 * 
+	 * @return The integer value of this objects suit.
+	 */
 	public int getSuit(){
 		return this.suit;
 	}
 	
+	/**
+	 * Translates integer values to a corresponding suit.
+	 * @param index	The integer value of a suit.
+	 * @return 		The suit corresponding to the supplied index argument.
+	 */
 	public static Suit pollSuit(int index){
 		switch(index){
 		case 1:
