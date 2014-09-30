@@ -36,7 +36,6 @@
 -title: String
 -edition: int
 -price: double
--authors: ArrayList&lt;Author&gt; (Ska denna tas bort)??
 -serialVersionUID = 1L: long
 --
 +Book(String isbn, String title, int edition, double price, ArrayList&lt;Author&gt; authorAdd): ctor
@@ -64,7 +63,6 @@
     </coordinates>
     <panel_attributes>TonyJocke_Lab3Del2::CollectionOfBooks
 --
--theBooks: ArrayList&lt;Book&gt;
 -serialVersionUID = 1L: long
 --
 +CollectionOfBooks(): ctor
