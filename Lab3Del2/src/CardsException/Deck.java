@@ -16,8 +16,10 @@ public class Deck {
 	private Card[] Deck;
 	private int cardsLeft;
 	
-	/** Class constructor.
-	 *  Create a standard deck of 52 cards */
+	/** 
+	 * Class constructor.
+	 * Create a standard deck of 52 cards 
+	 */
 	public Deck(){
 		this.cardsLeft = 52;
 		this.Deck = new Card[52];
@@ -26,9 +28,10 @@ public class Deck {
 		this.shuffle();
 	}
 	
-	/** Class constructor specifying number of cards in the deck object.
-	 * 	@param noOfCards	The amount of cards the new deck will contain.
-	 * */
+	/** 
+	 * Class constructor specifying number of cards in the deck object.
+	 * @param noOfCards	The amount of cards the new deck will contain.
+	 */
 	public Deck(int noOfCards){
 		this.cardsLeft = noOfCards;
 		this.Deck = new Card[noOfCards];
@@ -37,10 +40,11 @@ public class Deck {
 		this.shuffle();
 	}
 	
-	/** Returns a card from the deck and decreases number of cards in the deck.
-	 *  @return The card which was dealt from the deck.
-	 *  @throws NoSuchCardException
-	 *  */
+	/** 
+	 * Returns a card from the deck and decreases number of cards in the deck.
+	 * @return The card which was dealt from the deck.
+	 * @throws NoSuchCardException
+	 */
 	public Card Deal(){
 		if(cardsLeft < 1)
 			throw new NoSuchCardException("Tried to deal a card but the deck was empty.");
@@ -50,11 +54,12 @@ public class Deck {
 		return temp;
 	}
 	
-	/** Removes a card at the specified index. 
+	/** 
+	 * Removes a card at the specified index. 
 	 * @param	index	The index of the card to remove in the deck.
 	 * @return			true if the card at index was removed.
 	 * @throws 			NoSuchCardException
-	 * */
+	 */
 	public boolean removeCard(int index){
 		if(index > cardsLeft)
 			throw new NoSuchCardException("Couldn't remove card", index);
@@ -63,7 +68,12 @@ public class Deck {
 			return true;
 		}
 	}
-	
+	/**
+	 * Removes the card given as an argument.
+	 * @param 	card	The card to remove.
+	 * @return			True if the card was removed.
+	 * @throws			NoSuchCardException
+	 */
 	public boolean removeCard(Card card) {
 		for(int i = 0; i < this.Deck.length; i++)
 			if(Deck[i].equals(card)){
@@ -74,7 +84,9 @@ public class Deck {
 		throw new NoSuchCardException(card.toString() + " has already been dealt.");
 	}
 	
-	/** Pseudo-randomly shuffle the deck by stepping through the array and swapping cards. */
+	/** Pseudo-randomly shuffle the deck by stepping through the array and swapping cards. 
+	 *  
+	 */
 	public void shuffle(){
 		Random rand = new Random();
 		
@@ -87,13 +99,19 @@ public class Deck {
 		}
 	}
 	
-	/** Fill the deck with sorted cards. */
+	/** 
+	 * Fill the deck with sorted cards. 
+	 *  
+	 */
 	private void createNewCards(){
 		for(int i = 0; i < this.Deck.length; i++)
 			this.Deck[i] = new Card((i % 13)+1, (i/13)+1);
 	}
 	
-	/** Removes the card at index and moves every card after it one step down into the array. */
+	/** 
+	 * Removes the card at index and moves every card after it one step down into the array. 
+	 * @param index	Specifies at which index the pack should start.
+	 * */
 	private void pack(int index){
 		for(int i = index; i < Deck.length; i++)
 			Deck[i] = Deck[i+1];
@@ -106,7 +124,8 @@ public class Deck {
 			info += this.Deck[i].toString() + "\n";
 		return info;
 	}
-	
+	/** 
+	 * */
 	public String printSortedDeck(){
 		Arrays.sort(Deck,new BlackjackSort());
 		return this.toString();
