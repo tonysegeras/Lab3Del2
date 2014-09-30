@@ -3,6 +3,10 @@ package TonyJocke_Lab3Del2;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Objects of this class is used in a library of books
+ *
+ */
 public class Book implements Comparable<Book>, Serializable {
 	private String isbn;
 	private String title;
@@ -64,7 +68,7 @@ public class Book implements Comparable<Book>, Serializable {
 
 	/**
 	 * Gets a list of the authors of the book.
-	 * @return returns an ArrayList reference of the authors of the book
+	 * @return Returns an ArrayList reference of the authors of the book
 	 */
 	public ArrayList<Author> getAuthors() {
 		ArrayList<Author> copy = authors;
@@ -72,33 +76,54 @@ public class Book implements Comparable<Book>, Serializable {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Gets the ISBN of the book.
+	 * @return Returns a String reference of the ISBN of the book
 	 */
 	public String getIsbn() {
 		String info = this.isbn;
 		return info;
 	}
 
+	/**
+	 * Gets the title of the book.
+	 * @return Returns a String reference of the title of the book
+	 */
 	public String getTitle() {
 		String info = this.title;
 		return info;
 	}
 
+	/**
+	 * Gets the edition of the book.
+	 * @return Returns the edition of the book as an integer
+	 */
 	public int getEdition() {
 		return this.edition;
 	}
 
+	/**
+	 * Gets the price of the book.
+	 * @return Returns the price of the book as a double.
+	 */
 	public double returnPrice() {
 		return this.price;
 	}
 
+	/**
+	 * Compares this book to another book .
+	 * @param other the other book that will be compared to
+	 * @return Returns an integer, positive if the books are equal, negative if not.
+	 */
 	public int compareTo(Book other) {
 		int res = this.getTitle().compareTo(other.getTitle());
 		
 		return res;
 	}
 
+	/**
+	 * Method to print out all the information of the book.
+	 * @return Returns a String representation of the book.
+	 */
 	public String toString() {
 
 		String info = "Title: " + this.getTitle() + "; Author(s): ";
