@@ -84,8 +84,8 @@ public class Deck {
 		throw new NoSuchCardException(card.toString() + " has already been dealt.");
 	}
 	
-	/** Pseudo-randomly shuffle the deck by stepping through the array and swapping cards. 
-	 *  
+	/** 
+	 * Randomly shuffle the deck.
 	 */
 	public void shuffle(){
 		Random rand = new Random();
@@ -101,7 +101,6 @@ public class Deck {
 	
 	/** 
 	 * Fill the deck with sorted cards. 
-	 *  
 	 */
 	private void createNewCards(){
 		for(int i = 0; i < this.Deck.length; i++)
@@ -125,12 +124,18 @@ public class Deck {
 		return info;
 	}
 	/** 
-	 * */
+	 * Sorts the remaining cards by rank and suit, in that order and returns a string representation.
+	 * @return The string representation of the sorted deck.
+	 */
 	public String printSortedDeck(){
 		Arrays.sort(Deck,new BlackjackSort());
 		return this.toString();
 	}
 	
+	/** 
+	 * Sorts the remaining cards by suit and rank, in that order and returns a string representation.
+	 * @return The string representation of the sorted deck.
+	 */
 	public String printSortedDeckbySuit(){
 		Arrays.sort(Deck,new SortBySuit());
 		return this.toString();
