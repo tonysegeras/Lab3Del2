@@ -88,8 +88,13 @@ public class Deck {
 		return info;
 	}
 	
-	public String printSortetDeck(){
+	public String printSortedDeck(){
 		Arrays.sort(Deck,new BlackjackSort());
+		return this.toString();
+	}
+	
+	public String printSortedDeckbySuit(){
+		Arrays.sort(Deck,new SortBySuit());
 		return this.toString();
 	}
 }
