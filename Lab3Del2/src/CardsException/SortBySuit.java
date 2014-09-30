@@ -1,7 +1,9 @@
 package CardsException;
 import java.util.Comparator;
 
-
+/**
+ * Sorts cards by suit, then by rank. Cards of the same suit are ordered together.
+ */
 public class SortBySuit implements Comparator<Card>{
 
 	public int compare(Card o1, Card o2) {

@@ -2,6 +2,9 @@ package CardsException;
 
 import java.util.Comparator;
 
+/**
+ * Sorts cards by rank. Cards with the same rank are ordered by suit.
+ */
 public class BlackjackSort implements Comparator<Card>{
 
 	public int compare(Card o1, Card o2) {		

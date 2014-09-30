@@ -3,8 +3,6 @@ package CardsException;
 
 /**
  * Represents the suit of a playing card.
- * 
- *
  */
 public enum Suit {
 	HEARTS(4), SPADES(3), CLUBS(1), DIAMONDS(2);

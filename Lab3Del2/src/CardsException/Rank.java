@@ -12,7 +12,6 @@ public enum Rank{
 	
 	private int rank;
 	
-	
 	/**
 	 * Enumeration constructor.
 	 * @param rank	The integer value of the desired rank.
@@ -24,6 +23,7 @@ public enum Rank{
 	public int getRank(){
 		return this.rank;
 	}
+	
 	/**
 	 * Translates integer values to a corresponding rank.
 	 * @param index	The integer value of a rank.
