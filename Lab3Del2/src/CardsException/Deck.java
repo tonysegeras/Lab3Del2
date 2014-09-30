@@ -5,11 +5,10 @@ import java.util.Random;
 
 /**
  * A deck of cards.
- * 
- * 
- * 
- * 
- *
+ * <p>
+ * Contains card objects which can be dealt with Deal,
+ * removed with removeCard or shuffled with shuffle.
+ * When created the cards are stored sorted by suit.
  */
 
 public class Deck {
