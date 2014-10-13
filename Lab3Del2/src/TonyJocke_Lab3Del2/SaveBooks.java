@@ -27,16 +27,14 @@ public class SaveBooks {
 			System.out.println("Serialized successfully");
 			
 		} catch(FileNotFoundException e){
-			System.out.println("Couldn't find any previous library files."); // Vad göra annars? Vill ju inte att programmet kraschar direkt...
+			System.out.println("Couldn't find the previous library file."); // Vad göra annars? Vill ju inte att programmet kraschar direkt...
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
 				if(fos != null)
 					fos.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

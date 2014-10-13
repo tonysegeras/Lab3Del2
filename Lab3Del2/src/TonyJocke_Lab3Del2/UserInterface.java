@@ -9,13 +9,14 @@ public class UserInterface {
 	private String printedMenu;
 	private Scanner scan;
 	
-	// Main menu
+	// Main menu options
 	public static final int ADD = 1,
 							REMOVE = 2,
 							SEARCH = 3,
 							LIST = 4,
 							EXIT = 5;
-	// Search menu
+	
+	// Search menu options
 	public static final int TITLE = 1,
 							AUTHOR = 2,
 							ISBN = 3;
@@ -47,7 +48,7 @@ public class UserInterface {
 		System.out.println("Thank you for using the Tony&Joakim proprietary library software system.\nHave a nice day!");
 	}
 	
-	public int menuChoice(CollectionOfBooks library) throws IllegalArgumentException, NoSuchElementException{
+	public int menuChoice(CollectionOfBooks library){
 		
 		int choice = 0;
 		try{
@@ -55,7 +56,7 @@ public class UserInterface {
 		}catch(NoSuchElementException e){
 			throw e;
 		}
-			
+		
 		switch(choice){
 			case ADD:
 				addBook(library);
@@ -74,7 +75,6 @@ public class UserInterface {
 				break;
 				
 			case EXIT:
-				// Save books then exit
 				break;
 				
 			default:
@@ -83,7 +83,7 @@ public class UserInterface {
 		return choice;
 	}
 	
-	public void addBook(CollectionOfBooks library) throws IllegalArgumentException{
+	public void addBook(CollectionOfBooks library){
 		
 		String title = "";
 		System.out.print("Enter the title: ");
@@ -117,7 +117,7 @@ public class UserInterface {
 		return authorToTemp;
 	}
 	
-	public void removeBook(CollectionOfBooks library) throws IllegalArgumentException{
+	public void removeBook(CollectionOfBooks library){
 		
 		if(library.containsBooks()){
 		
@@ -141,7 +141,7 @@ public class UserInterface {
 			System.out.println("Your library contains no books.");
 	}
 	
-	public ArrayList<Book> search(CollectionOfBooks library) throws IllegalArgumentException{
+	public ArrayList<Book> search(CollectionOfBooks library){
 
 		System.out.println("What would you like to search the library by?\n" +
 				"1: Title.\n" +
