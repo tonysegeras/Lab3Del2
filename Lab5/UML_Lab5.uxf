@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>720</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::Author
+--
+-name: String
+-serialVersionUID = 1L: long
+--
++Author(String name): ctor
++setAuthor(String name): void
++getAuthor(): String
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>610</y>
+      <w>580</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::Book
+--
+-isbn: String
+-title: String
+-edition: int
+-price: double
+-serialVersionUID = 1L: long
+--
++Book(String isbn, String title, int edition, double price, ArrayList&lt;Author&gt; authorAdd): ctor
++Book(Book book): ctor
++toLowerCase(): void
++addAuthor(String author): void
++getAuthors(): ArrayList&lt;Author&gt;
++getIsbn(): String
++getTitle(): String
++getEdition(): int
++returnPrice(): double
++compareTo(Book other): int
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>300</y>
+      <w>400</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::CollectionOfBooks
+--
+-serialVersionUID = 1L: long
+--
++CollectionOfBooks(): ctor
++addBook(Book book): void
++getBooksByTitle(String title): ArrayList&lt;Book&gt;
++removeBook(Book book): void
++toLowerCase(ArrayList&lt;Book&gt; books): void
++getBooksByIsbn(String searchedISBN): ArrayList&lt;Book&gt;
++getBooksByAuthor(String searchedAuthor): ArrayList&lt;Book&gt;
++toString(): String
++compareTo(Book other): int
++containsBooks(): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>30</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::LibraryMain
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>0</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::LoadBooks
+--
+--
+-LoadBooks(): ctor
++load(String from): CollectionOfBooks
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>120</y>
+      <w>300</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::SaveBooks
+--
+--
+-SaveBooks(): ctor
++save(CollectionOfBooks from, String to): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>90</y>
+      <w>320</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;220.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>780</y>
+      <w>130</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+-authors</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>550</y>
+      <w>190</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..*
+-theBooks</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>40</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>90</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>440</y>
+      <w>290</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>270.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>580</y>
+      <w>80</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;140.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>580</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>90.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>310</y>
+      <w>410</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::UserInterface
+--
+-printedMenu: String
+-scan: Scanner
++ADD = 1, REMOVE = 2, SEARCH = 3, LIST = 4, EXIT = 5: int
++TITLE = 1, AUTHOR = 2, ISBN = 3: int
+--
++UserInterface(): ctor
++menu(CollectionOfBooks library): void
++menuChoice(CollectionOfBooks library): int
++addBook(CollectionOfBooks library): void
+-authorsInAList(String author): ArrayList&lt;Author&gt;
++removeBook(CollectionOfBooks library): void
++search(CollectionOfBooks library): ArrayList&lt;Book&gt;
++list(CollectionOfBooks library): void
+-printBooks(ArrayList&lt;Book&gt; list): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>20</y>
+      <w>410</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>TonyJocke_Lab3Del2::View
+--
+-model : CollectionModel
+-spreadsheet: JPanel
+-fileHandler: JPanel
+-buttons: JPanel
+-search: JPanel
+
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
